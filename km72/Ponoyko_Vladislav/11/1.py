@@ -6,7 +6,7 @@ def inp_float():
     Функція для введення чисел типу float
     Args:
         None
-    Returns: 
+    Returns:
         c: float, число
     Raises:
         None
@@ -21,9 +21,9 @@ def inp_float():
     if (((a.rfind('.')) == a.find('.') != -1)):
         a = a.split('.')
         if((float_help(a[0])) & (float_help(a[1]))):
-             if (b == 1):
+            if (b == 1):
                 return (-float(mas_str(a)))
-             else:
+            else:
                 return float(mas_str(a))
         else:
             a = inp_float()
@@ -37,11 +37,19 @@ def inp_float():
         else:
             a = inp_float()
             return (a)
-    
+
+
 def float_help(a):
+    '''
+    Helper function
+    '''
     return str.isdigit(a)
 
+
 def mas_str(a):
+    '''
+    Helper function
+    '''
     if((type(a)) == list):
             a = '.'.join(a)
             return a
@@ -49,26 +57,25 @@ def mas_str(a):
         return str(a)
 
 
-def kvadvpryamo(x, y, c = 30):
+def kvadvpryamo(x, y, c=30):
     '''
-    Функція рахує скільки квадратів з стороною c може вміститись 
-    в прямокутнику з сторонами x,y
+    Функція для обрахунку
+
     Args:
-        x: float, Ширина
-        y: float, Довжина
-        c: float, Довжина/Ширина
-    Returns: 
-        c: float, Скільки квадратів зможе вміститись в прямокутнику 
+        x:float, argument
+        y:float, argument
+        c:int
+
+    Returns:
+        c: float, число
+
     Raises:
-        Overflow Error, Value Error
+        None
+
     Examples:
-        Ширина прямокутника
-        50000
-        Висота прямокутника
-        40000
-        2222222 квадрата зі стороною 30 може вміститись в даному прямокутнику 
+
     '''
-    c=(x*y)//(c**2)
+    c = (x*y)//(c**2)
     return c
 
 
@@ -77,19 +84,6 @@ def power(x, y):
 
 
 def count(x):
-    '''
-    Функція рахує скільки квадратів з стороною c може вміститись 
-    в прямокутнику з сторонами x,y
-    Args:
-        x: float, аргумент
-    Returns: 
-        n: float, значення функцію при вказаному аргументі x 
-    Raises:
-        Overflow Error, Value Error
-    Examples:
-        Введіть аргумент 5
-        7917.413159102576
-    '''   
     n = power(e, x)-x-2+power(1+x, x)
     return n
 
@@ -109,5 +103,5 @@ while ((a == '1') | (a == '2')):
         x = inp_float()
         print('Висота прямокутника' + '\n')
         y = inp_float()
-        print(kvadvpryamo(x, y), 'квадрата зі стороною 30 може вміститись в даному прямокутнику')
-
+        print(kvadvpryamo(x, y), 'квадрата зі стороною 30 може \
+                                  вміститись в даному прямокутнику')
